@@ -1,0 +1,34 @@
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+h1{
+    color: #2d2e2d;
+    font-size: 40px;
+    margin: 10px;
+}
+
+h2{
+    display: inline-block;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    margin-top: 5px;
+}
+
+#session,#break,#incrementPom,#decrementPom{
+    display: inline-block;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    
+}
+
+#setTimes{
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+
+i{
+    color: white;
+}
