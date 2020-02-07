@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <div id="container">
     <h1>Pomodoro Clock</h1>
 
     <div id="setTimes">
@@ -23,35 +23,57 @@
             <h2>Break</h2>
         </div>
         <div class="row2">
-            <div id="decrementPom">
-                <i class="fa fa-chevron-down fa-1x">
-                </i>
-            </div>
-            <div id="session">
-                <span class="sessionPom">25</span>
-            </div>
-            <div id="incrementPom">
-                <i class="fa fa-chevron-up fa-1x">
-                </i>
-            </div>
+            
+                <div id="incrementSession">
+                    <i class="fa fa-chevron-up fa-1x">
+                    </i>
+                </div>
+                <div id="session">
+                    <span id="sessionPom">25</span>
+                </div>
+                <div id="decrementSession">
+                    <i class="fa fa-chevron-down fa-1x">
+                    </i>
+                </div>
+            
 
-            <div id="decrementPom">
-                <i class="fa fa-chevron-down fa-1x">
-                </i>
-            </div>
-            <div id="break">
-                <span class="breakPom">5</span>
-            </div>
-            <div id="incrementPom">
-                <i class="fa fa-chevron-up fa-1x">
-                </i>
-            </div>
+            
+                <div id="incrementBreak">
+                    <i class="fa fa-chevron-up fa-1x">
+                    </i>
+                </div>
+                <div id="break">
+                    <span id="breakPom">5</span>
+                </div>
+                <div id="decrementBreak">
+                    <i class="fa fa-chevron-down fa-1x">
+                    </i>
+                </div>
+            
 
         </div>
     </div>
 
-    <div>
+    <div class="mainInterface">
+        <div id="playResetRow" class="row"> 
+            <i id="play" class="fa fa-caret-right"></i>
+            <i id="reset" class="fa fa-refresh"></i>
+        </div>
+        <div id="headingTime">
+            <div id="sessionHeading"class="row">
+                Session
+            </div>
+            <div class="row">
+                <div id="clock">25:00</div>
+            </div>
+        </div>
+        <div id="pauseStopRow" class="row"> 
+            <i id="pause" class="fa fa-pause"></i>
+            <i id="stop" class="fa fa-stop"></i>
+        </div>
         
+    </div>
+
     </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

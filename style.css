@@ -1,6 +1,10 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 body{
     background-color: gray;
-    text-align: center;
+
 }
 
 h1{
@@ -16,11 +20,17 @@ h2{
     margin-top: 5px;
 }
 
-#session,#break,#incrementPom,#decrementPom{
+.row2{
+    padding-left: 55px ;
+}
+
+#incrementSession,#decrementSession,#session,
+#incrementBreak,#decrementBreak,#break{
     display: inline-block;
-    padding-right: 1.2rem;
-    padding-left: 1.2rem;
-    
+}
+
+#decrementSession{
+    padding-right: 7em ;
 }
 
 #setTimes{
@@ -28,6 +38,51 @@ h2{
     background-color: black;
     color: white;
 }
+
+.row{
+    color:white;
+    font-weight: bold;
+    
+}
+
+
+#sessionHeading{
+    font-size: 25px;
+}
+
+#clock{
+    font-size: 35px;
+}  
+
+.mainInterface{
+    display: block;
+    padding: 10px;
+    width: 338.4px;
+    height: 130px;
+    margin-top: 10px;
+    background-color:black;
+    
+}
+
+#playResetRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+#pauseStopRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+#playResetRow, #pauseStopRow{
+    font-size: 20px;
+}
+
+#sessionHeading,#clock{
+    display: flex;
+    justify-content: center;
+}
+
 
 i{
     color: white;
