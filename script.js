@@ -56,7 +56,7 @@ class Pomodoro{
     decrementTimerDisplay(){
         let minutes = parseInt(clock.textContent.slice(0,-3));
         let seconds = parseInt(clock.textContent.slice(-2));
-        let section = timerHeading.textContent;
+        let alarmAudio = new Audio('https://onlineclock.net/audio/options/default.mp3');
 
         if(minutes == 0){
             clearInterval(timerInterval);
@@ -68,6 +68,7 @@ class Pomodoro{
                 type = 'session';
                 pomodoro.sessionModify();
             }
+            alarmAudio.play();
             return;
         }
         
