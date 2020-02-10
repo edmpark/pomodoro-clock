@@ -2,14 +2,14 @@ class Pomodoro{
 
     sessionModify(crement=0){
         let time = parseInt(sessionTime.textContent);
-        if(time == 0 && crement == -1){
+        if( time == 0 && crement == -1){
             return;
         }
         time = time + crement;
 
         sessionTime.textContent = time.toString();
         
-        if(type === 'session'){
+        if(type === 'session' && timerWorkStatus == 0){
             clock.textContent = time+":00";
             timerHeading.textContent = 'Session';
         }
@@ -17,14 +17,14 @@ class Pomodoro{
 
     breakModify(crement=0){
         let time = parseInt(breakTime.textContent);
-        if(time == 0 && crement == -1){
+        if((time == 0 && crement == -1) || timerWorkStatus == 1){
             return;
         }
         time = time + crement;
 
         breakTime.textContent = time.toString();
         
-        if(type === 'break'){
+        if(type === 'break' && timerWorkStatus == 0){
             clock.textContent = time+":00";
             timerHeading.textContent = 'Break';
         }
@@ -88,6 +88,8 @@ class Pomodoro{
     }
 
 }
+
+//query selects and getting elements into vars for linking with button click to modify timer
 const sessionUpButton = document.querySelector('#incrementSession');
 const sessionDownButton = document.querySelector('#decrementSession');
 const breakUpButton = document.querySelector('#incrementBreak');
@@ -109,7 +111,12 @@ let timerInterval;
 let type = 'session';            //indicator for session or break timer type since there is only 1 unified 'shared' timer space
                                  //session starts first on default
 
+let timerWorkStatus = 0;         //0 indicates timer isn't currently timing down and 1 is timer is currently timing down. Used so timer
+                                 //can't be updated midway while working. 
+
+//buttons being linked
 playButton.addEventListener('click', button =>{
+    timerWorkStatus = 1;
     pomodoro.startTimer();
 });
 
@@ -118,10 +125,12 @@ pauseButton.addEventListener('click', button =>{
 });
 
 stopButton.addEventListener('click', button =>{
+    timerWorkStatus = 0;
     pomodoro.stopTimer();
 });
 
 resetButton.addEventListener('click', button =>{
+    timerWorkStatus = 0;
     pomodoro.resetTimer();
 });
 
